@@ -25,6 +25,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -33,6 +36,7 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="1uiLc7TYdsfM6HoH70hUNkxmLgs" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
@@ -79,17 +83,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -227,7 +220,7 @@
       <workItem from="1626751569049" duration="6541000" />
       <workItem from="1626785793522" duration="3856000" />
       <workItem from="1626870274066" duration="1363000" />
-      <workItem from="1632669921449" duration="1112000" />
+      <workItem from="1632669921449" duration="1613000" />
     </task>
     <servers />
   </component>
