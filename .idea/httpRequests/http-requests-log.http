@@ -1,0 +1,38 @@
+GET http://127.0.0.1:8080/test
+
+<> 2021-07-07T155712.500.html
+
+###
+
+GET http://localhost:8080/wang
+
+<> 2021-07-07T155624.500.html
+
+###
+
+GET http://localhost:8080/wang
+
+<> 2021-07-07T155518.500.html
+
+###
+
+GET http://localhost/test/wanguser/name
+
+###
+
+GET http://localhost/test/user/name
+
+###
+
+GET http://localhost/test/user/name
+
+###
+
+GET http://localhost/test/user/name
+
+###
+
+GET http://127.0.0.1:8080/test
+
+###
+

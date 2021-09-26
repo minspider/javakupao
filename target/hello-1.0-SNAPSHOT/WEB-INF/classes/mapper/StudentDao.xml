@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zyy.dao.StudentDao">
+  <resultMap id="BaseResultMap" type="com.zyy.entity.Student">
+    <id column="sno" jdbcType="VARCHAR" property="sno" />
+    <result column="sname" jdbcType="VARCHAR" property="sname" />
+    <result column="sage" jdbcType="TINYINT" property="sage" />
+    <result column="ssex" jdbcType="OTHER" property="ssex" />
+    <result column="sbirthday" jdbcType="TIMESTAMP" property="sbirthday" />
+    <result column="classs" jdbcType="VARCHAR" property="classs" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    sno, sname, sage, ssex, sbirthday, classs
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from student
+    where sno = #{sno,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from student
+    where sno = #{sno,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" keyColumn="sno" keyProperty="sno" parameterType="com.zyy.entity.Student" useGeneratedKeys="true">
+    insert into student (sname, sage, ssex, 
+      sbirthday, classs)
+    values (#{sname,jdbcType=VARCHAR}, #{sage,jdbcType=TINYINT}, #{ssex,jdbcType=OTHER}, 
+      #{sbirthday,jdbcType=TIMESTAMP}, #{classs,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="sno" keyProperty="sno" parameterType="com.zyy.entity.Student" useGeneratedKeys="true">
+    insert into student
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="sname != null">
+        sname,
+      </if>
+      <if test="sage != null">
+        sage,
+      </if>
+      <if test="ssex != null">
+        ssex,
+      </if>
+      <if test="sbirthday != null">
+        sbirthday,
+      </if>
+      <if test="classs != null">
+        classs,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="sname != null">
+        #{sname,jdbcType=VARCHAR},
+      </if>
+      <if test="sage != null">
+        #{sage,jdbcType=TINYINT},
+      </if>
+      <if test="ssex != null">
+        #{ssex,jdbcType=OTHER},
+      </if>
+      <if test="sbirthday != null">
+        #{sbirthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="classs != null">
+        #{classs,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zyy.entity.Student">
+    update student
+    <set>
+      <if test="sname != null">
+        sname = #{sname,jdbcType=VARCHAR},
+      </if>
+      <if test="sage != null">
+        sage = #{sage,jdbcType=TINYINT},
+      </if>
+      <if test="ssex != null">
+        ssex = #{ssex,jdbcType=OTHER},
+      </if>
+      <if test="sbirthday != null">
+        sbirthday = #{sbirthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="classs != null">
+        classs = #{classs,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where sno = #{sno,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zyy.entity.Student">
+    update student
+    set sname = #{sname,jdbcType=VARCHAR},
+      sage = #{sage,jdbcType=TINYINT},
+      ssex = #{ssex,jdbcType=OTHER},
+      sbirthday = #{sbirthday,jdbcType=TIMESTAMP},
+      classs = #{classs,jdbcType=VARCHAR}
+    where sno = #{sno,jdbcType=VARCHAR}
+  </update>
+</mapper>

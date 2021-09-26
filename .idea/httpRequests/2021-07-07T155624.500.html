@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh">
+<head><title>HTTP状态 500 - 内部服务器错误</title>
+    <style type="text/css">body {
+        font-family: Tahoma, Arial, sans-serif;
+    }
+
+    h1, h2, h3, b {
+        color: white;
+        background-color: #525D76;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    h3 {
+        font-size: 14px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    a {
+        color: black;
+    }
+
+    .line {
+        height: 1px;
+        background-color: #525D76;
+        border: none;
+    }</style>
+</head>
+<body><h1>HTTP状态 500 - 内部服务器错误</h1>
+<hr class="line"/>
+<p><b>类型</b> 异常报告</p>
+<p><b>消息</b> Servlet[spring-dispatcher]的Servlet.init（）引发异常</p>
+<p><b>描述</b> 服务器遇到一个意外的情况，阻止它完成请求。</p>
+<p><b>例外情况</b></p>
+<pre>javax.servlet.ServletException: Servlet[spring-dispatcher]的Servlet.init（）引发异常
+	org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:544)
+	org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:698)
+	org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:364)
+	org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:624)
+	org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:831)
+	org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1651)
+	org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	java.lang.Thread.run(Unknown Source)
+</pre>
+<p><b>根本原因。</b></p>
+<pre>org.springframework.beans.factory.BeanCreationException: Error creating bean with name &#39;org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping&#39;: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map &#39;wangController&#39; method
+public com.zyy.entity.Student com.zyy.controller.WangController.wang()
+to {[&#47;test&#47;],methods=[GET]}: There is already &#39;testController&#39; bean method
+public com.zyy.entity.Student com.zyy.controller.TestController.test() mapped.
+	org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1578)
+	org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:775)
+	org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:861)
+	org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541)
+	org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:668)
+	org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:634)
+	org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:682)
+	org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:553)
+	org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494)
+	org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	javax.servlet.GenericServlet.init(GenericServlet.java:158)
+	org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:544)
+	org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:698)
+	org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:364)
+	org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:624)
+	org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:831)
+	org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1651)
+	org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	java.lang.Thread.run(Unknown Source)
+</pre>
+<p><b>根本原因。</b></p>
+<pre>java.lang.IllegalStateException: Ambiguous mapping. Cannot map &#39;wangController&#39; method
+public com.zyy.entity.Student com.zyy.controller.WangController.wang()
+to {[&#47;test&#47;],methods=[GET]}: There is already &#39;testController&#39; bean method
+public com.zyy.entity.Student com.zyy.controller.TestController.test() mapped.
+	org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.assertUniqueMethodMapping(AbstractHandlerMethodMapping.java:570)
+	org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:534)
+	org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:258)
+	org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:244)
+	org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:214)
+	org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:184)
+	org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:124)
+	org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1637)
+	org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1574)
+	org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:775)
+	org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:861)
+	org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541)
+	org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:668)
+	org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:634)
+	org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:682)
+	org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:553)
+	org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494)
+	org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	javax.servlet.GenericServlet.init(GenericServlet.java:158)
+	org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:544)
+	org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:698)
+	org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:364)
+	org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:624)
+	org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:831)
+	org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1651)
+	org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	java.lang.Thread.run(Unknown Source)
+</pre>
+<p><b>):注意</b> 主要问题的全部 stack 信息可以在 server logs 里查看</p>
+<hr class="line"/>
+<h3>Apache Tomcat/8.5.68</h3></body>
+</html>
